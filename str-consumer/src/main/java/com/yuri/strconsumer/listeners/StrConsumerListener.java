@@ -28,15 +28,11 @@ public class StrConsumerListener {
 //	public void log(String message) {
 //		logger.info("LOG ::: Receive message \n{}", message);
 //	}
-//
-//	@KafkaListener(groupId = "group-2", topics = "str-topic", containerFactory = "strContainerFactory")
-//	public void email(String message) {
-//		logger.info("Email ::: Receive message \n{}", message);
-//	}
 
-	@StrConsumerCustomListener(groupId = "group-1")
+	@StrConsumerCustomListener(groupId = "group-0")
 	public void create(String message) {
 		logger.info("CREATE ::: Receive message \n{}", message);
+		throw new IllegalArgumentException("Exception...");
 	}
 
 	@StrConsumerCustomListener(groupId = "group-1")
