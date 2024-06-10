@@ -1,10 +1,10 @@
-package com.yuri.strproducer;
+package com.yuri.strconsumer;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ApplicationTests {
+class StrConsumerApplicationTests {
 
 	@Test
 	void contextLoads() {

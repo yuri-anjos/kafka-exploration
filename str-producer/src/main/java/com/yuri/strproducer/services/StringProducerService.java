@@ -19,9 +19,11 @@ public class StringProducerService {
 	}
 
 	public void sendMessage(String message) {
+		logger.info("Sending message... {}", message);
+
 		kafkaTemplate.send("str-topic", message).whenComplete((result, e) -> {
 			if (e == null) {
-				logger.info("Send message successfully!");
+				logger.info("Message sent successfully !");
 				logger.info("Partition: {}", result.getRecordMetadata().partition());
 				logger.info("Offset: {}", result.getRecordMetadata().offset());
 			} else {
