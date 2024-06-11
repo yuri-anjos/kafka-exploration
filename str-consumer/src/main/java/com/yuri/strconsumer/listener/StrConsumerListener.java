@@ -1,4 +1,4 @@
-package com.yuri.strconsumer.listeners;
+package com.yuri.strconsumer.listener;
 
 import com.yuri.strconsumer.custom.StrConsumerCustomListener;
 import org.slf4j.Logger;

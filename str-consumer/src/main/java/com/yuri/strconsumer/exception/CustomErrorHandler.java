@@ -1,4 +1,4 @@
-package com.yuri.strconsumer.exceptions;
+package com.yuri.strconsumer.exception;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
