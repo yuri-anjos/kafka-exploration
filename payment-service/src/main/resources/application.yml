@@ -1,0 +1,10 @@
+server:
+    port: 8001
+
+spring:
+    application:
+        name: payment-service
+    kafka:
+        consumer:
+            bootstrap-servers:
+                - 'localhost:29092'
