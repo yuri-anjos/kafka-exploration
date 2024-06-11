@@ -4,5 +4,5 @@ import com.yuri.paymentservice.model.Payment;
 
 public interface PaymentServiceInterface {
 
-	void sendPayment(Payment payment);
+	void sendPayment(Payment payment) throws InterruptedException;
 }

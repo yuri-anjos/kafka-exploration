@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 public interface PaymentResourceInterface {
 
-	ResponseEntity<Payment> payment(@RequestBody Payment payment);
+	ResponseEntity<Payment> payment(@RequestBody Payment payment) throws InterruptedException;
 
 }

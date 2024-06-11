@@ -23,7 +23,7 @@ public class PaymentResource implements PaymentResourceInterface {
 
 	@Override
 	@PostMapping
-	public ResponseEntity<Payment> payment(Payment payment) {
+	public ResponseEntity<Payment> payment(Payment payment) throws InterruptedException {
 		paymentService.sendPayment(payment);
 		return ResponseEntity.status(HttpStatus.CREATED).build();
 	}
