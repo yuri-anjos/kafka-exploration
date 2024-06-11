@@ -23,10 +23,8 @@ public class PaymentService implements PaymentServiceInterface {
 	}
 
 	@Override
-	public void sendPayment(Payment payment) throws InterruptedException {
+	public void sendPayment(Payment payment) {
 		logger.info("Payment received: {}", payment);
-		Thread.sleep(1000);
-
 		logger.info("Sending payment...");
 		kafkaTemplate.send("payment-topic", payment);
 	}
