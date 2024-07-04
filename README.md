@@ -23,4 +23,4 @@ Aplicação extremamente simples apenas para entender o funcionamento do kafka, 
 
 ### Postman
 
-Coleção do postman: files/msrabbitmq.postman_collection.json
+Coleção do postman: files/kafka-exploration.postman_collection.json

@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "45405a2d-0ff3-4ab4-90d9-ad2cddc20399",
+		"name": "Kafka Exploration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20783374"
+	},
+	"item": [
+		{
+			"name": "String producer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "Test send message 12\r\n",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/strproducer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"strproducer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Payment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2,\r\n    \"userId\": 2,\r\n    \"productId\": 2,\r\n    \"cardNumber\": \"0129392710782\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/payment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"payment"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
