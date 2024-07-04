@@ -2,8 +2,8 @@ version: '3'
 
 services:
   zookeeper:
-    image: confluentinc/cp-zookeeper:latest
-    container_name: 'zookeeper'
+    image: confluentinc/cp-zookeeper:7.6.1
+    container_name: zookeeper
     restart: unless-stopped
     networks:
       - broker-kafka
@@ -12,8 +12,8 @@ services:
       ZOOKEEPER_TICK_TIME: 2000
 
   kafka:
-    image: confluentinc/cp-kafka:latest
-    container_name: 'kafka'
+    image: confluentinc/cp-kafka:7.6.1
+    container_name: kafka
     restart: unless-stopped
     networks:
       - broker-kafka
@@ -30,8 +30,8 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 
   kafdrop:
-    image: obsidiandynamics/kafdrop:latest
-    container_name: 'kafdrop'
+    image: obsidiandynamics/kafdrop:4.0.1
+    container_name: kafdrop
     restart: unless-stopped
     networks:
       - broker-kafka
@@ -43,8 +43,7 @@ services:
       KAFKA_BROKERCONNECT: kafka:29092
 
   json-consumer:
-    container_name: 'json-consumer'
-    image: yurianjos/json-consumer
+    container_name: json-consumer
     restart: unless-stopped
     build: ./json-consumer/
     ports:
@@ -59,8 +58,7 @@ services:
       - kafka
 
   payment-service:
-    container_name: 'payment-service'
-    image: yurianjos/payment-service
+    container_name: payment-service
     restart: unless-stopped
     build: ./payment-service/
     ports:
@@ -75,8 +73,7 @@ services:
       - kafka
 
   str-consumer:
-    container_name: 'str-consumer'
-    image: yurianjos/str-consumer
+    container_name: str-consumer
     restart: unless-stopped
     build: ./str-consumer/
     ports:
@@ -91,8 +88,7 @@ services:
       - kafka
 
   str-producer:
-    container_name: 'str-producer'
-    image: yurianjos/str-producer
+    container_name: str-producer
     restart: unless-stopped
     build: ./str-producer/
     ports:
@@ -108,7 +104,6 @@ services:
 
 networks:
   broker-kafka:
-    driver: bridge
 
 volumes:
   broker-kafka-data: {}

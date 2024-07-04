@@ -30,18 +30,21 @@ public class StrConsumerListener {
 //	}
 
 	@StrConsumerCustomListener(groupId = "group-0")
-	public void create(String message) {
+	public void create(String message) throws InterruptedException {
+		Thread.sleep(0);
 		logger.info("CREATE ::: Receive message \n{}", message);
 		throw new IllegalArgumentException("Exception...");
 	}
 
 	@StrConsumerCustomListener(groupId = "group-1")
-	public void log(String message) {
+	public void log(String message) throws InterruptedException {
+		Thread.sleep(1000);
 		logger.info("LOG ::: Receive message \n{}", message);
 	}
 
 	@KafkaListener(groupId = "group-2", topics = "str-topic", containerFactory = "validateMessageContainerFactory")
-	public void history(String message) {
+	public void history(String message) throws InterruptedException {
+		Thread.sleep(2000);
 		logger.info("HISTORY ::: Receive message \n{}", message);
 	}
 }

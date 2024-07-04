@@ -5,4 +5,4 @@ spring:
   application:
       name: str-producer
   kafka:
-    bootstrap-servers: ${KAFKA_HOST:localhost:29092}
+    bootstrap-servers: ${KAFKA_HOST:localhost:9092}
